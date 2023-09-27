@@ -56,9 +56,11 @@ export default {
   mounted() {
     this.image = this.$refs.image;
     this.cropper = new Cropper(this.image, {
+      zoomable: false,
+      scalable: false,
       crop: () => {
         const cropSettings = {}
-        cropSettings.maxWidth = 500;
+        cropSettings.maxWidth = 800;
         const canvas = this.cropper.getCroppedCanvas(cropSettings);
         this.destination = canvas.toDataURL("image/png");
       }

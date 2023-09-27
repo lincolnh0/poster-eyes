@@ -90,21 +90,37 @@ export default {
       const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID
       const redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI
 
-      const response = await axios.post('https://accounts.spotify.com/api/token', {
-        grant_type: 'authorization_code',
-        code: code,
-        redirect_uri: redirect_uri,
-        client_id: client_id,
-        code_verifier: localStorage.getItem('code_verifier'),
-      }, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json'
-        }
-      })
-      this.access_token = response.data.access_token;
-      localStorage.setItem('access_token', response.data.access_token);
-      localStorage.setItem('refresh_token', response.data.refresh_token);
+      if (localStorage.getItem('refresh_token') !== null) {
+        const response = await axios.post('https://accounts.spotify.com/api/token', {
+          grant_type: 'refresh_token',
+          client_id: client_id,
+          refresh_token: localStorage.getItem('refresh_token'),
+        }, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          }
+        })
+        this.access_token = response.data.access_token;
+        localStorage.setItem('access_token', response.data.access_token);
+      } else {
+
+        const response = await axios.post('https://accounts.spotify.com/api/token', {
+          grant_type: 'authorization_code',
+          code: code,
+          redirect_uri: redirect_uri,
+          client_id: client_id,
+          code_verifier: localStorage.getItem('code_verifier'),
+        }, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          }
+        })
+        this.access_token = response.data.access_token;
+        localStorage.setItem('access_token', response.data.access_token);
+        localStorage.setItem('refresh_token', response.data.refresh_token);
+      }
     },
     generateRandomString(length) {
       let text = '';

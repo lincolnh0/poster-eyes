@@ -7,8 +7,5 @@
 <script>
 export default {
   props: ["artist"],
-  mounted() {
-    console.log(this.artist.external_urls.spotify)
-  }
 }
 </script>
