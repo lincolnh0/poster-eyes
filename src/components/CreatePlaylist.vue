@@ -10,7 +10,7 @@
       <button type="submit" class="py-2 px-4 rounded shadow text-lg font-bold bg-spotify-green-500 hover:bg-spotify-green-900 text-gray-800 hover:text-gray-200">
         Create Playlist
       </button>
-      <button type="button" @click="reset" class="py-2 px-4 rounded shadow text-lg font-bold bg-gray-500 hover:bg-gray-600 text-gray-100 hover:text-gray-200">
+      <button type="button" @click="reset(false)" class="py-2 px-4 rounded shadow text-lg font-bold bg-gray-500 hover:bg-gray-600 text-gray-100 hover:text-gray-200">
         New Search
       </button>
     </div>
