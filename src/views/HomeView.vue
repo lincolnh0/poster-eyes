@@ -42,7 +42,7 @@ export default {
     async oauthAtSpotify(selected_tracks) {
       localStorage.setItem("selected_tracks", JSON.stringify(selected_tracks));
 
-      if (localStorage.getItem('access_code') === undefined) {
+      if (localStorage.getItem('access_code') === null) {
         const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID
         const redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI
 
