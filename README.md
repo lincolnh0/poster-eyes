@@ -1,35 +1,31 @@
 # postereyes
 
-This template should help get you started developing with Vue 3 in Vite.
+A VueJS based project that reads festival posters lineup and create
+a Spotify playlist with the artists' top tracks.
 
-## Recommended IDE Setup
+## Project setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+Install dependencies
+```
 yarn
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+Local development
+```
 yarn dev
 ```
 
-### Compile and Minify for Production
-
-```sh
+Build for production
+```
 yarn build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
+Spotify ENV files
+- Create a Spotify app on https://developer.spotify.com/dashboard/applications
+- Create a `.env` file on the root of the project
+- Add the following variables to the `.env` file:
+```
+VITE_SPOTIFY_CLIENT_ID=YOUR_SPOTIFY_CLIENT_ID
+VITE_SPOTIFY_CLIENT_SECRET=YOUR_SPOTIFY_CLIENT_SECRET
+VITE_SPOTIFY_REDIRECT_URI=YOUR_SPOTIFY_REDIRECT_URI
 ```
