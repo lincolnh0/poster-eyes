@@ -1,6 +1,6 @@
 <template>
   <div v-if="artists.length" class="py-6">
-    <h1 class="text-5xl text-center mb-12 font-bold text-gray-100">Tops tracks</h1>
+    <h1 class="text-5xl text-center mb-12 font-bold text-gray-100">Top tracks</h1>
     <div class="grid-cols-3 gap-8 grid w-full">
       <TracksCard v-for="track in track_results" :key="track.artist" :artist="track.artist" :tracks="track.tracks"/>
     </div>
