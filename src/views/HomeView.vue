@@ -20,7 +20,7 @@ export default {
     } else {
       await this.clientCredentialsAuth();
     }
-    if (localStorage.getItem('selected_tracks')) {
+    if (localStorage.getItem('selected_tracks') !== null) {
       this.selected_tracks = localStorage.getItem('selected_tracks');
     }
   },
