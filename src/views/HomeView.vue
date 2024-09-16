@@ -15,7 +15,7 @@ export default {
   async mounted() {
     const urlParams = new URLSearchParams(window.location.search);
     let code = urlParams.get('code');
-    if (code !== null || localStorage.getItem('access_code')) {
+    if (code !== null || localStorage.getItem('access_token')) {
       await this.authorizationCodeAuth(code);
     } else {
       await this.clientCredentialsAuth();
@@ -42,7 +42,7 @@ export default {
     async oauthAtSpotify(selected_tracks) {
       localStorage.setItem("selected_tracks", JSON.stringify(selected_tracks));
 
-      if (localStorage.getItem('access_code') === null) {
+      if (localStorage.getItem('access_token') === null) {
         const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID
         const redirect_uri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI
 
@@ -121,7 +121,7 @@ export default {
           localStorage.setItem('refresh_token', response.data.refresh_token);
         }
       } catch (e) {
-        window.location = '/';
+        console.log(e);
       }
     },
     generateRandomString(length) {
