@@ -70,9 +70,7 @@ export default {
     async submitRecogniseImage() {
       this.extractedText = '';
       const file = this.$refs.destination.src;
-      const worker = await createWorker();
-      await worker.loadLanguage('eng');
-      await worker.initialize('eng');
+      const worker = await createWorker('eng');
       const { data: { text } } = await worker.recognize(file);
       await worker.terminate();
 
