@@ -11,5 +11,18 @@
 
 body {
   background-image: linear-gradient(to bottom, #121212, black);
+}
 
+body.theme-v1 {
+  background-image: linear-gradient(135deg, #1a0533, #0d1b2a);
+}
+
+body.theme-v2 {
+  background: #fafafa;
+  background-image: none;
+}
+
+body.theme-v3 {
+  background: #fff200;
+  background-image: none;
 }
