@@ -7,14 +7,7 @@ export default {
     './node_modules/flowbite/**/*.js',
   ],
   theme: {
-    extend: {
-      colors: {
-        'spotify-green': {
-          900: '#2D9F36',
-          500: '#65d46e',
-        },
-      },
-    },
+    extend: {},
   },
   plugins: [flowbite],
 }

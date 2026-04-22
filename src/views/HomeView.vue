@@ -11,7 +11,7 @@ const {
 </script>
 
 <template>
-  <div v-if="!selected_tracks.length" :key="selected_tracks">
+  <div class="font-mono text-black" v-if="!selected_tracks.length" :key="selected_tracks">
     <ArtistResults v-if="access_token" :key="artists" :artists="artists"
                    :access_token="access_token"
                    :resetArtists="resetArtists"
@@ -19,7 +19,7 @@ const {
     />
     <ImageUpload v-if="!artists.length" :key="artists" :addArtists="addArtists"/>
   </div>
-  <div v-else>
+  <div class="font-mono text-black" v-else>
     <CreatePlaylist :tracks="selected_tracks" :reset="resetTracks"/>
   </div>
 </template>

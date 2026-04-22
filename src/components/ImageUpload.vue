@@ -1,16 +1,16 @@
 <template>
-  <h1 class="text-5xl text-center mt-12 my-6 font-bold text-gray-100">
+  <h1 class="text-5xl text-center mt-12 my-6 font-black uppercase tracking-widest text-black">
     Poster eyes
   </h1>
-  <p class="text-gray-200 text-center">
+  <p class="text-black text-center font-mono uppercase tracking-wide">
     Helping you create a playlist ahead of your festivals.
   </p>
   <div v-show="!imageSrc"
-       class="p-12 shadow rounded-xl mt-12 flex gap-12 bg-gradient-to-b from-gray-700 items-center">
+       class="bg-yellow-300 border-4 border-black p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] mt-12 flex gap-12 items-center">
 
-    <label class="text-xl font-bold text-gray-100" for="file_input">Upload lineup poster</label>
+    <label class="text-xl font-black uppercase text-black" for="file_input">Upload lineup poster</label>
     <input id="file_input"
-        class="block w-1/2  text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+        class="block w-1/2 text-black border-4 border-black bg-white cursor-pointer focus:outline-none"
          ref="file" type="file" @change="previewFiles()">
   </div>
   <div v-show="imageSrc">
@@ -40,8 +40,4 @@ export default {
     }
   }
 }
-
 </script>
-
-<style scoped>
-</style>
