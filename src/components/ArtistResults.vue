@@ -1,20 +1,20 @@
 <template>
   <div v-if="artists.length" class="py-6">
-    <h1 class="text-5xl text-center mb-12 font-bold text-gray-100">Top tracks</h1>
-    <p v-if="!track_results.length" class="text-gray-100 mt-12">Loading...</p>
+    <h1 class="text-5xl text-center mb-12 font-black uppercase tracking-widest text-black">Top tracks</h1>
+    <p v-if="!track_results.length" class="text-black font-mono uppercase mt-12">Loading...</p>
     <div class="grid-cols-3 gap-8 grid w-full">
       <TracksCard v-for="track in track_results" :key="track.artist" :artist="track.artist" :tracks="track.tracks"/>
     </div>
     <div v-if="track_results.length" class="flex flex-col w-full mt-12 gap-4" >
-      <button v-if="!logged_in" class="py-3 px-6 rounded shadow text-lg font-bold bg-spotify-green-500 hover:bg-spotify-green-900 text-gray-900 hover:text-gray-100"
+      <button v-if="!logged_in" class="py-3 px-6 bg-red-500 border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
               type="button"
               @click="oauthRedirect(selected_tracks)">
               Login and create playlist</button>
-      <button v-else class="py-3 px-6 rounded shadow text-lg font-bold bg-spotify-green-500 hover:bg-spotify-green-900 text-gray-900 hover:text-gray-100"
+      <button v-else class="py-3 px-6 bg-red-500 border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
               type="button"
               @click="oauthRedirect(selected_tracks)">
               Create playlist</button>
-      <button class="py-3 px-6 rounded shadow text-lg font-bold bg-gray-500 hover:bg-gray-600 text-gray-100 hover:text-gray-200"
+      <button class="py-3 px-6 bg-white border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
               type="button"
               @click="resetArtists">
         Start over</button>

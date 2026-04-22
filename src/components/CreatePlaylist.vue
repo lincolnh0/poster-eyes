@@ -1,16 +1,15 @@
 <template>
-
   <form class="flex flex-col gap-4 w-full mt-12 items-center"
       @submit.prevent="createPlaylist">
-    <label class="text-2xl font-bold text-gray-100"
+    <label class="text-2xl font-black uppercase text-black"
         :for="playlist_title">Playlist Title</label>
-    <input class="w-1/2 py-4 block text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+    <input class="w-1/2 py-4 block bg-white text-black border-4 border-black font-mono cursor-pointer focus:outline-none"
         :id="playlist_title" v-model="playlist_title" type="text"/>
     <div class="flex gap-4">
-      <button type="submit" class="py-2 px-4 rounded shadow text-lg font-bold bg-spotify-green-500 hover:bg-spotify-green-900 text-gray-800 hover:text-gray-200">
+      <button type="submit" class="py-2 px-4 bg-red-500 border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
         Create Playlist
       </button>
-      <button type="button" @click="reset(false)" class="py-2 px-4 rounded shadow text-lg font-bold bg-gray-500 hover:bg-gray-600 text-gray-100 hover:text-gray-200">
+      <button type="button" @click="reset(false)" class="py-2 px-4 bg-white border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
         New Search
       </button>
     </div>
@@ -86,7 +85,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
